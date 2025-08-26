@@ -1,11 +1,11 @@
 function stringChop(str, size) {
-  // If str is null or size is not positive, return empty array
+  // Handle null input
   if (str === null || size <= 0) return [];
 
   const result = [];
 
   for (let i = 0; i < str.length; i += size) {
-    result.push(str.slice(i, i + size));
+    result.push(str.substring(i, i + size));
   }
 
   return result;
@@ -13,5 +13,7 @@ function stringChop(str, size) {
 
 // Do not change the code below
 const str = prompt("Enter String.");
-const size = parseInt(prompt("Enter Chunk Size."));
+const size = parseInt(prompt("Enter Chunk Size."), 10);
+
+// Use JSON.stringify to show the array properly in alert
 alert(JSON.stringify(stringChop(str, size)));
