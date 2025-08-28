@@ -1,8 +1,13 @@
-const size = parseInt(prompt("Enter Chunk Size."), 10);
-if (isNaN(size) || size <= 0) {
-    alert("Please enter a valid positive integer for chunk size.");
-} else {
-    alert(JSON.stringify(stringChop(str, size)));
+function stringChop(str, size) {
+  if (str == null || str === "" || isNaN(size) || size <= 0) {
+    return [];
+  }
+
+  let result = [];
+  for (let i = 0; i < str.length; i += size) {
+    result.push(str.substring(i, i + size));
+  }
+  return result;
 }
 
 
