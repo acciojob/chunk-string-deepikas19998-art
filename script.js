@@ -1,13 +1,14 @@
-function chunkString(str, size) {
-    if (!str) return []; // null or empty string check
-    
-    let result = [];
-    for (let i = 0; i < str.length; i += size) {
-        result.push(str.substring(i, i + size));
+function chunkString(str, chunkLength) {
+    if (str == null) return [];
+
+    const result = [];
+    for (let i = 0; i < str.length; i += chunkLength) {
+        result.push(str.slice(i, i + chunkLength));
     }
     return result;
-
 }
+
+
 
 // Do not change the code below
 const str = prompt("Enter String.");
