@@ -1,11 +1,8 @@
-function stringChop(str, chunkLength) {
-    if (str == null) return [];
-
-    const result = [];
-    for (let i = 0; i < str.length; i += chunkLength) {
-        result.push(str.slice(i, i + chunkLength));
-    }
-    return result;
+const size = parseInt(prompt("Enter Chunk Size."), 10);
+if (isNaN(size) || size <= 0) {
+    alert("Please enter a valid positive integer for chunk size.");
+} else {
+    alert(JSON.stringify(stringChop(str, size)));
 }
 
 
